@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# dist-versions from node-releases-experiments
+# https://github.com/rsp/node-releases-experiments
+# by Rafał Pocztarski - https://github.com/rsp
+
+curl -s http://nodejs.org/dist/ \
+| grep -oP '<a href="\Kv\d+\.\d+\.\d+(?=/")'
