@@ -14,6 +14,8 @@ Prerequisites
 It should work on any standard Linux/Unix distribution. If it doesn't,
 please [sumbit an issue](https://github.com/rsp/node-releases-experiments/issues).
 
+It was written and tested on Ubuntu 14.04.
+
 Commands
 --------
 
