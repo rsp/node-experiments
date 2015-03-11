@@ -4,5 +4,5 @@
 # https://github.com/rsp/node-releases-experiments
 # by Rafał Pocztarski - https://github.com/rsp
 
-curl -s http://nodejs.org/dist/ \
+curl -s https://nodejs.org/dist/ \
 | grep -oP '<a href="\Kv\d+\.\d+\.\d+(?=/")'
