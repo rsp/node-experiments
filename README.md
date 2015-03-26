@@ -43,7 +43,7 @@ See: [Streams.md](Streams.md) for details.
 
 ### `stdin-events-all.js`
 
-Shows what events are fired **with** a 'data' event handler.
+Shows what events are fired for the stdin stream **with** a 'data' event handler.
 
 Interesting examples:
 ```
@@ -55,7 +55,8 @@ See: [Streams.md](Streams.md) for more examples with output.
 
 ### `stdin-events-nodata.js`
 
-Shows what events are fired **without** a 'data' event handler.
+Shows what events are fired for the stdin stream **without** a 'data' event handler.
+
 Interesting examples:
 ```
 $ ./stdin-events-nodata.js
@@ -65,6 +66,41 @@ $ cat /dev/null | ./stdin-events-nodata.js
 $ echo | ./stdin-events-nodata.js
 ```
 See: [Streams.md](Streams.md) for more examples with output.
+
+### `file-events-all.js`
+
+Shows what events are fired for the file stream **with** a 'data' event handler.
+
+Interesting examples:
+```
+$ ./file-events-all.js <(cat empty-file)
+$ ./file-events-all.js <(cat one-newline)
+
+$ ./file-events-all.js empty-file
+$ ./file-events-all.js one-newline
+
+$ ./file-events-all.js .
+$ ./file-events-all.js -
+```
+
+### `file-events-nodata.js`
+
+Shows what events are fired for the file stream **without** a 'data' event handler.
+
+Interesting examples:
+```
+$ ./file-events-nodata.js <(cat empty-file)
+$ ./file-events-nodata.js <(cat one-newline)
+
+$ ./file-events-nodata.js <(cat /dev/null)
+$ ./file-events-nodata.js <(echo)
+
+$ ./file-events-nodata.js empty-file
+$ ./file-events-nodata.js one-newline
+
+$ ./file-events-nodata.js .
+$ ./file-events-nodata.js -
+```
 
 Releases
 --------
