@@ -7,13 +7,18 @@
 // This experiment shows which stdin events are fired
 // with a 'data' event handler.
 
+var num = 0;
+function logEvent(message) {
+	console.log(++num + '. ' + message);
+}
+
 console.log(
 	"stdin events with 'data' event handler:"
 );
 
-process.stdin.on('open',     function () { console.log('stdin open'); });
-process.stdin.on('end',      function () { console.log('stdin end'); });
-process.stdin.on('close',    function () { console.log('stdin close'); });
-process.stdin.on('data',     function () { console.log('stdin data'); });
-process.stdin.on('readable', function () { console.log('stdin readable'); });
+process.stdin.on('open',     function () { logEvent('stdin open'); });
+process.stdin.on('end',      function () { logEvent('stdin end'); });
+process.stdin.on('close',    function () { logEvent('stdin close'); });
+process.stdin.on('data',     function () { logEvent('stdin data'); });
+process.stdin.on('readable', function () { logEvent('stdin readable'); });
 
